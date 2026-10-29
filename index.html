@@ -213,7 +213,9 @@
                 color: #222;
                 border-color: #ccc;
             }
+
         }
+        
     </style>
 </head>
 
@@ -255,6 +257,35 @@
                     duration: ""
                 }
             ],
+            experience: [
+    {
+        id: 1,
+        role: "Python Full Stack Developer Intern",
+        company: "NexGen Innovator Solutions",
+        type: "Internship",
+        duration: "June 2026 – July 2026",
+        location: "Chennai, Tamil Nadu, India",
+        workMode: "On-site",
+
+        responsibilities: [
+            "Completed Python Full Stack Development training using the Django framework.",
+            "Developed web applications using Django MVT architecture, Python, HTML, CSS, Bootstrap, and SQLite.",
+            "Worked on database modeling, Django Admin Panel, and CRUD operations.",
+            "Gained practical exposure to Agentic AI concepts and Data Analytics.",
+            "Participated in coding exercises, practical assignments, and problem-solving activities.",
+            "Strengthened Python programming, web development, and teamwork skills."
+        ],
+
+        skills: [
+            "Python",
+            "Django",
+            "Bootstrap",
+            "SQLite",
+            "Agentic AI",
+            "Data Analytics"
+        ]
+    }
+],
 
             skills: [
                 {
@@ -272,6 +303,10 @@
                 {
                     category: "Tools",
                     items: ["Git", "GitHub", "VS Code", "Postman"]
+                },
+                {
+                    category: "API Development",
+                    items: ["RESTful APIs"]
                 }
             ],
 
@@ -313,6 +348,28 @@
                     </td>
                 </tr>
             `).join("");
+            const experienceHTML = resume.experience.map(job => `
+        <div class="experience">
+        <h3>${job.role}</h3>
+
+        <p><strong>${job.company}</strong> | ${job.type}</p>
+
+        <p class="project-tech">
+            ${job.duration} | ${job.location} | ${job.workMode}
+        </p>
+
+        <ul>
+            ${job.responsibilities.map(item => `
+                <li>${item}</li>
+            `).join("")}
+        </ul>
+
+        <p>
+            <strong>Skills:</strong>
+            ${job.skills.join(", ")}
+        </p>
+    </div>
+`).join("");
 
             const skillsHTML = resume.skills.map(group => `
                 <h3>${group.category}</h3>
@@ -399,7 +456,10 @@
                             </tbody>
                         </table>
                     </section>
-
+                    <section>
+                        <h2>Internship Experience</h2>
+                        ${experienceHTML}
+                    </section>
                     <section>
                         <h2>Technical Skills</h2>
                         ${skillsHTML}
