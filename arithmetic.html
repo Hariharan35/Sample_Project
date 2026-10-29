@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>
+            JavaScript Arithmetic Operations
+        </title>
+    </head>
+    <body>
+        <h1>Arithmetic Operations</h1>
+        <label>Enter Number 1 :</label>
+        <input tupe="text" id="box1"><br><br>
+        <label>Enter Number 2 :</label>
+        <input tupe="text" id="box2"><br><br>   
+        <p id="result"><strong>Result</strong></p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="add">Add</button><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="sub">Subtraction</button><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="multiply">Multiplication</button><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="divide">Division</button><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        
+    </body>
+    <script>
+        const btn=document.getElementById("add");
+
+        function add(){
+            let a=document.getElementById("box1").value;
+            let b=document.getElementById("box2").value;
+            let sum=Number(a)+Number(b);
+            document.getElementById("result").innerHTML=sum;
+        }
+        btn.addEventListener("click",add)
+
+        const btn1=document.getElementById("sub")
+
+        function subtraction(){
+            let a=document.getElementById("box1").value;
+            let b=document.getElementById("box2").value;
+            let sum=Number(a)-Number(b);
+            document.getElementById("result").innerHTML=sum;
+        }
+        btn1.addEventListener("click",subtraction)
+
+        const btn2=document.getElementById("multiply")
+        function multiplication(){
+            let a=document.getElementById("box1").value;
+            let b=document.getElementById("box2").value;
+            let sum=Number(a)*Number(b);
+            document.getElementById("result").innerHTML=sum;
+        }
+        btn2.addEventListener("click",multiplication)
+
+        const btn3=document.getElementById("divide")
+        function division(){
+            let a=document.getElementById("box1").value;
+            let b=document.getElementById("box2").value;
+            let sum=Number(a)/Number(b);
+            document.getElementById("result").innerText=sum;
+        }
+        btn3.addEventListener("click",division)
+    </script>
+</html>

@@ -1,0 +1,14 @@
+<html>
+    <title>Inner text vs Inner HTML</title>
+    <body>
+        <p id="name"> My Name is Hari</p>
+    </body>
+    <script>
+        const a=document.getElementById("name");
+        //a.innerText="My name is <b>Vijay</b>"
+
+       a.innerHTML="My name is <b>Vijay</b>";
+       //a.innerHTML="My name is <em>Vijay</em>";
+       
+    </script>
+</html>

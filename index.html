@@ -1,107 +1,473 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<html>
 <head>
-    <title>Hariharan R - Resume</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharn R | Resume</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px 15px;
+            background: #f1f5f9;
+            color: #334155;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .resume {
+            max-width: 850px;
+            margin: auto;
+            padding: 35px 45px;
+            background: white;
+            border-top: 6px solid #2563eb;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h1 {
+            margin: 0;
+            color: #1e3a8a;
+            font-size: 32px;
+        }
+
+        .role {
+            margin: 5px 0 12px;
+            color: #2563eb;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .contact {
+            margin: 4px 0;
+            overflow-wrap: anywhere;
+        }
+
+        a {
+            color: #1d4ed8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-top: 24px;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            padding-bottom: 6px;
+            color: #1e3a8a;
+            font-size: 18px;
+            border-bottom: 2px solid #dbeafe;
+        }
+
+        h3 {
+            margin: 12px 0 4px;
+            color: #1e293b;
+            font-size: 15px;
+        }
+
+        p {
+            margin: 5px 0 10px;
+        }
+
+        ul {
+            margin: 6px 0;
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .education-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .education-table th,
+        .education-table td {
+            padding: 11px 10px;
+            border: 1px solid #cbd5e1;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .education-table th {
+            background: #eff6ff;
+            color: #1e3a8a;
+        }
+
+        .education-table tbody tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills-list li {
+            margin: 0;
+            padding: 5px 11px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 4px;
+            color: #1e40af;
+        }
+
+        .project-title {
+            margin-bottom: 5px;
+        }
+
+        .project-tech {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        footer {
+            margin-top: 25px;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+            color: #64748b;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .resume {
+                padding: 24px 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .education-table th,
+            .education-table td {
+                padding: 7px 5px;
+                font-size: 12px;
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            body {
+                padding: 0;
+                background: white;
+                font-size: 10pt;
+                color: #222;
+            }
+
+            .resume {
+                max-width: none;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+
+            section {
+                margin-top: 16px;
+            }
+
+            h2, h3 {
+                break-after: avoid;
+            }
+
+            .education-table,
+            .project {
+                break-inside: avoid;
+            }
+
+            a {
+                color: #222;
+            }
+
+            .skills-list li {
+                background: white;
+                color: #222;
+                border-color: #ccc;
+            }
+        }
+    </style>
 </head>
 
 <body>
+    <div id="resume" class="resume"></div>
 
-    <header>
-        <h1>Hariharan R</h1>
-        <h3>Full-Stack Developer</h3>
+    <script>
+        const resume = {
+            personalInfo: {
+                name: "Hariharan R",
+                role: "Full-Stack Developer",
+                location: "Chennai, Tamil Nadu",
+                phone: "+91 9344122841",
+                email: "hariharan3920@gmail.com",
+                links: {
+                    github: "https://github.com/Hariharan35",
+                    linkedin: "https://linkedin.com/in/hariharanr3920"
+                }
+            },
 
-        <p>Chennai, Tamil Nadu</p>
-        <p>Phone: 93441222841</p>
-        <p>Email: hariharan3920@gmail.com</p>
+            careerObjective:
+                "MCA student with a strong interest in Python and Full-Stack Development. Familiar with Python, Django, HTML, CSS, JavaScript, and database management. Interested in developing reliable web applications, building REST APIs, and solving practical problems through clean and maintainable code.",
 
-        <p>
-            <a href="https://github.com/Hariharan35/">
-                GitHub
-            </a>
-            |
-            <a href="https://linkedin.com/in/hariharanr3920">
-                LinkedIn
-            </a>
-        </p>
-    </header>
+            education: [
+                {
+                    id: 1,
+                    qualification: "Master of Computer Applications (MCA)",
+                    institution: "S.A. Engineering College",
+                    score: "8.07 CGPA",
+                    status: "Pursuing",
+                    duration: "Up to Semester II"
+                },
+                {
+                    id: 2,
+                    qualification: "B.Sc. Computer Science",
+                    institution: "K.C.S. Kasi Nadar College of Arts & Science",
+                    score: "80.80%",
+                    status: "Completed",
+                    duration: ""
+                }
+            ],
 
-    <hr>
+            skills: [
+                {
+                    category: "Programming Languages",
+                    items: ["Python", "JavaScript (Basics)", "SQL"]
+                },
+                {
+                    category: "Web Technologies",
+                    items: ["HTML5", "CSS3", "Bootstrap"]
+                },
+                {
+                    category: "Frameworks and Databases",
+                    items: ["Django", "MySQL", "MongoDB"]
+                },
+                {
+                    category: "Tools",
+                    items: ["Git", "GitHub", "VS Code", "Postman"]
+                }
+            ],
 
-    <section>
-        <h2>Career Objective</h2>
+            projects: [
+                {
+                    id: 1,
+                    title: "SkillStack - Learning Management System (LMS)",
+                    technologies: [
+                        "Python", "Django", "HTML", "CSS", "JavaScript"
+                    ],
+                    description: [
+                        "Developed a web-based platform for managing courses, student enrollment, and learning activities.",
+                        "Implemented features to organize course content and provide access to learning materials.",
+                        "Used Django to handle application logic, database operations, and dynamic web pages."
+                    ]
+                }
+            ],
 
-        <p>
-            MCA student with a strong interest in Full-Stack
-            Development. I have knowledge of Python, <br>HTML,
-            CSS, and JavaScript, along with hands-on experience
-            in the Django framework.
-        </p>
-    </section>
+            strengths: [
+                "Problem-solving and analytical thinking",
+                "Quick learner with an interest in new technologies",
+                "Teamwork and collaborative development",
+                "Willingness to learn and improve code quality"
+            ]
+        };
 
-    <hr>
+        function renderResume() {
+            const info = resume.personalInfo;
 
-    <section>
-        <h2>Education</h2>
+            const educationHTML = resume.education.map(education => `
+                <tr>
+                    <td>${education.qualification}</td>
+                    <td>${education.institution}</td>
+                    <td>
+                        ${education.score}
+                        ${education.duration
+                            ? `<br><small>${education.duration}</small>`
+                            : ""}
+                    </td>
+                </tr>
+            `).join("");
 
-        <h3>S.A. Engineering College</h3>
+            const skillsHTML = resume.skills.map(group => `
+                <h3>${group.category}</h3>
+                <ul class="skills-list">
+                    ${group.items.map(skill => `
+                        <li>${skill}</li>
+                    `).join("")}
+                </ul>
+            `).join("");
 
-        <p>
-            Master of Computer Applications (MCA)
-        </p>
+            const projectsHTML = resume.projects.map(project => `
+                <div class="project">
+                    <h3 class="project-title">
+                        ${project.title}
+                    </h3>
 
-        <p>
-            CGPA: 8.07 (up to 2nd semester)
-        </p>
-    </section>
+                    <p class="project-tech">
+                        Technologies: ${project.technologies.join(", ")}
+                    </p>
 
-    <hr>
+                    <ul>
+                        ${project.description.map(point => `
+                            <li>${point}</li>
+                        `).join("")}
+                    </ul>
+                </div>
+            `).join("");
 
-    <section>
-        <h2>Technical Skills</h2>
+            const strengthsHTML = resume.strengths.map(strength => `
+                <li>${strength}</li>
+            `).join("");
 
-        <ul>
-            <li>Python</li>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript (Basics)</li>
-            <li>Django</li>
-            <li>MySQL</li>
-            <li>MongoDB</li>
-        </ul>
-    </section>
+            // REDUCE: Calculate the total number of listed skills.
+            const totalSkills = resume.skills.reduce(
+                (total, group) => total + group.items.length,
+                0
+            );
 
-    <hr>
+            document.getElementById("resume").innerHTML = `
+                <header class="header">
+                    <h1>${info.name}</h1>
+                    <p class="role">${info.role}</p>
 
-    <section>
-        <h2>Projects</h2>
+                    <p class="contact">
+                        ${info.location} | Phone: ${info.phone}
+                    </p>
 
-        <h3>Learning Management System</h3>
+                    <p class="contact">
+                        Email:
+                        <a href="mailto:${info.email}">
+                            ${info.email}
+                        </a>
+                    </p>
 
-        <p>
-            Developed a web application using Python and Django
-            to manage courses, student enrollment,<br> and learning
-            progress.
-        </p>
-    </section>
+                    <p class="contact">
+                        <a href="${info.links.github}"
+                           target="_blank"
+                           rel="noopener noreferrer">GitHub</a>
+                        |
+                        <a href="${info.links.linkedin}"
+                           target="_blank"
+                           rel="noopener noreferrer">LinkedIn</a>
+                    </p>
+                </header>
 
-    <hr>
+                <main>
+                    <section>
+                        <h2>Career Objective</h2>
+                        <p>${resume.careerObjective}</p>
+                    </section>
 
-    <section>
-        <h2>Personal Strengths</h2>
+                    <section>
+                        <h2>Education</h2>
+                        <table class="education-table">
+                            <thead>
+                                <tr>
+                                    <th>Qualification</th>
+                                    <th>Institution</th>
+                                    <th>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${educationHTML}
+                            </tbody>
+                        </table>
+                    </section>
 
-        <ul>
-            <li>Problem-solving</li>
-            <li>Quick learning</li>
-            <li>Teamwork</li>
-        </ul>
-    </section>
+                    <section>
+                        <h2>Technical Skills</h2>
+                        ${skillsHTML}
+                        <p><strong>Total listed skills:</strong> ${totalSkills}</p>
+                    </section>
 
-    <hr>
+                    <section>
+                        <h2>Projects</h2>
+                        ${projectsHTML}
+                    </section>
 
-    <footer>
-        <p>Resume of Hariharan R</p>
-    </footer>
+                    <section>
+                        <h2>Personal Strengths</h2>
+                        <ul>${strengthsHTML}</ul>
+                    </section>
+                </main>
 
+                <footer>
+                    
+                </footer>
+            `;
+        }
+
+        function findEducation(degree) {
+            return resume.education.find(education =>
+                education.qualification.toLowerCase().includes(
+                    degree.toLowerCase()
+                )
+            );
+        }
+
+        function findProjectIndex(title) {
+            return resume.projects.findIndex(project =>
+                project.title.toLowerCase().includes(title.toLowerCase())
+            );
+        }
+
+        function updateProject(projectId, newTitle) {
+            const index = resume.projects.findIndex(
+                project => project.id === projectId
+            );
+
+            if (index === -1) {
+                console.log("Project not found.");
+                return;
+            }
+
+            resume.projects[index].title = newTitle;
+            renderResume();
+        }
+
+        function countSkills() {
+            return resume.skills.reduce((total, group) => {
+                return total + group.items.length;
+            }, 0);
+        }
+
+        renderResume();
+
+        console.log("Education:", findEducation("MCA"));
+        console.log("Skill count:", countSkills());
+        console.log(
+            "SkillStack project index:",
+            findProjectIndex("SkillStack")
+        );
+
+        // Example of a live update:
+        // updateProject(1, "SkillStack - Updated LMS");
+    </script>
 </body>
 </html>
